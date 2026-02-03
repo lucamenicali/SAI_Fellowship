@@ -1,0 +1,43 @@
+2026-01-29 11:40:35.667465: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-01-29 11:40:36.300902: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2026-01-29 11:40:37.808989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 21066 MB memory:  -> device: 0, name: NVIDIA A10, pci bus id: 0000:ca:00.0, compute capability: 8.6
+2026-01-29 11:42:57.117550: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8902
+
+Number of GPUs: 1
+
+RESULTS FOR 06
+
+RMSE
+VIT-CAE. Mean: 2.48e-03, Med: 2.35e-03, IQR: (1.90e-03, 3.29e-03)
+CAE    . Mean: 2.68e-03, Med: 2.51e-03, IQR: (2.18e-03, 3.32e-03)
+
+MAE
+VIT-CAE. Mean: 1.35e-03, Med: 1.37e-03, IQR: (1.11e-03, 1.65e-03)
+CAE    . Mean: 1.50e-03, Med: 1.50e-03, IQR: (1.26e-03, 1.79e-03)
+
+SSIM
+VIT-CAE. Mean: 9.99e-01, Med: 1.00e+00, IQR: (9.99e-01, 1.00e+00)
+CAE    . Mean: 9.99e-01, Med: 1.00e+00, IQR: (9.98e-01, 1.00e+00)
+
+Navier Stokes
+
+Mass Con.
+Data   ; Mean: 5.51e-04, Med: 7.27e-06, IQR: (1.04e-06, 4.93e-05)
+VIT-CAE; Mean: 6.62e-01, Med: 9.16e-04, IQR: (1.75e-04, 4.00e-03)
+CAE    ; Mean: 2.99e+00, Med: 1.66e-03, IQR: (3.05e-04, 7.67e-03)
+
+Mom-u
+Data   ; Mean: 4.70e-04, Med: 8.16e-06, IQR: (1.09e-06, 7.00e-05)
+VIT-CAE; Mean: 1.04e+00, Med: 1.43e-03, IQR: (2.56e-04, 7.23e-03)
+CAE    ; Mean: 8.64e+00, Med: 3.70e-03, IQR: (6.13e-04, 2.20e-02)
+
+Mom-w
+Data   ; Mean: 4.22e-03, Med: 7.64e-05, IQR: (9.49e-06, 6.39e-04)
+VIT-CAE; Mean: 1.50e-01, Med: 3.54e-03, IQR: (6.30e-04, 1.84e-02)
+CAE    ; Mean: 2.59e+00, Med: 7.46e-03, IQR: (1.29e-03, 4.42e-02)
+
+Energy
+Data   ; Mean: 5.01e-03, Med: 5.58e-05, IQR: (7.15e-06, 3.98e-04)
+VIT-CAE; Mean: 2.96e+00, Med: 1.16e-03, IQR: (2.08e-04, 6.03e-03)
+CAE    ; Mean: 7.10e+00, Med: 1.33e-03, IQR: (2.02e-04, 7.89e-03)

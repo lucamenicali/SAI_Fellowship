@@ -1,0 +1,12 @@
+id=1;  patch_size=32;  projection_dim=64;    num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=2;  patch_size=32;  projection_dim=64;    num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=3;  patch_size=32;  projection_dim=128;   num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=4;  patch_size=32;  projection_dim=128;   num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=5;  patch_size=16;  projection_dim=64;    num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=6;  patch_size=16;  projection_dim=64;    num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=7;  patch_size=16;  projection_dim=128;   num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=8;  patch_size=16;  projection_dim=128;   num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=9;  patch_size=8;   projection_dim=64;    num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=10; patch_size=8;   projection_dim=64;    num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=11; patch_size=8;   projection_dim=128;   num_heads=4;  transformer_layers=2;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
+id=12; patch_size=8;   projection_dim=128;   num_heads=4;  transformer_layers=4;  enc_layers=64,64,64,64;      drop=0.1;    kernel_size=3; batch_size=16
