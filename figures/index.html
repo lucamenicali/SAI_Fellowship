@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DNS vs. Diffusion Model Forecast</title>
+  <title>DNS vs. Diffusion Model Forecasts</title>
   <style>
     html, body { margin: 0; background: #fff; color: #1a1a1a; }
     body {
@@ -15,13 +15,58 @@
       text-align: center;
     }
     h1 { font-size: clamp(1.1rem, 4vw, 1.8rem); font-weight: 600; margin: 0; }
+    .tabs { display: inline-flex; border: 1px solid #bbb; border-radius: 8px; overflow: hidden; }
+    .tabs button {
+      font: inherit; font-size: 1rem; padding: 0.6rem 1.6rem;
+      border: 0; background: #fff; color: #1a1a1a; cursor: pointer;
+    }
+    .tabs button + button { border-left: 1px solid #bbb; }
+    .tabs button[aria-selected="true"] { background: #1a1a1a; color: #fff; }
+    .tabs button:focus-visible { outline: 3px solid #2a6df4; outline-offset: -3px; }
     video { width: 100%; max-width: 1200px; height: auto; display: block; }
+    video[hidden] { display: none; }
     .hint { display: none; font-size: 0.9rem; color: #666; margin: 0; }
     @media (orientation: portrait) and (max-width: 700px) { .hint { display: block; } }
   </style>
 </head>
 <body>
-  <video src="SAI_forecast_pi_ar1_1_32.mp4" autoplay loop muted playsinline controls preload="auto"></video>
+  <h1 id="title">2D Rayleigh–Bénard: DNS vs. diffusion model</h1>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tab-2d" aria-selected="true">2D</button>
+    <button role="tab" id="tab-3d" aria-selected="false">3D</button>
+  </div>
+
+  <video id="v-2d" src="SAI_forecast_pi_ar1_1_32.mp4"
+         autoplay loop muted playsinline controls preload="auto"></video>
+  <video id="v-3d" src="SAI_forecast_3d.mp4"
+         loop muted playsinline controls preload="metadata" hidden></video>
+
   <p class="hint">Turn your phone sideways for a larger view.</p>
+
+  <script>
+    const views = {
+      "2d": { tab: "tab-2d", video: "v-2d", title: "2D Rayleigh–Bénard: DNS vs. diffusion model" },
+      "3d": { tab: "tab-3d", video: "v-3d", title: "3D Rayleigh–Bénard: DNS vs. diffusion model" }
+    };
+
+    function show(name) {
+      for (const [key, v] of Object.entries(views)) {
+        const on = key === name;
+        const vid = document.getElementById(v.video);
+        document.getElementById(v.tab).setAttribute("aria-selected", on);
+        vid.hidden = !on;
+        if (on) { vid.play().catch(() => {}); } else { vid.pause(); }
+      }
+      document.getElementById("title").textContent = views[name].title;
+      history.replaceState(null, "", "#" + name);
+    }
+
+    document.getElementById("tab-2d").onclick = () => show("2d");
+    document.getElementById("tab-3d").onclick = () => show("3d");
+
+    // Open the 3D view directly if the link ends in #3d
+    show(location.hash === "#3d" ? "3d" : "2d");
+  </script>
 </body>
 </html>
