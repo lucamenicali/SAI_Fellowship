@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNS vs. Diffusion Model Forecast</title>
+  <style>
+    html, body { margin: 0; background: #fff; color: #1a1a1a; }
+    body {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem; padding: 1rem; box-sizing: border-box;
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+    h1 { font-size: clamp(1.1rem, 4vw, 1.8rem); font-weight: 600; margin: 0; }
+    video { width: 100%; max-width: 1200px; height: auto; display: block; }
+    .hint { display: none; font-size: 0.9rem; color: #666; margin: 0; }
+    @media (orientation: portrait) and (max-width: 700px) { .hint { display: block; } }
+  </style>
+</head>
+<body>
+  <h1>DNS data vs. diffusion model forecast</h1>
+  <video src="SAI_forecast_pi_ar1_1_32.mp4" autoplay loop muted playsinline controls preload="auto"></video>
+  <p class="hint">Turn your phone sideways for a larger view.</p>
+</body>
+</html>
